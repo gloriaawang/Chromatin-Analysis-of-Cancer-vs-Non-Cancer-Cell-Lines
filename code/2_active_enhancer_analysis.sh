@@ -5,16 +5,16 @@
 # and create visualization data
 
 # Set working directory
-WORKDIR="/ihome/biosc1542_2024s/glw30/mp2"
+WORKDIR=""
 cd $WORKDIR
 
 # Load required modules
 module load gcc/8.2.0 bedtools/2.30.0 macs/2.2.7.1 deeptools/3.3.0
 
 # Define input files
-CHR_SIZES="/ix1/biosc1542_2024s/data/hg38_chr_sizes.txt"
-CHIP_BAM="/ix1/biosc1542_2024s/mp2/k562_k27ac_chip.bam"
-INPUT_BAM="/ix1/biosc1542_2024s/mp2/k562_input.bam"
+CHR_SIZES="hg38_chr_sizes.txt"
+CHIP_BAM="k562_k27ac_chip.bam"
+INPUT_BAM="k562_input.bam"
 
 # Call H3K27ac peaks
 echo "Calling H3K27ac peaks..."
