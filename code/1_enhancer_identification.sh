@@ -5,16 +5,16 @@
 # by excluding regions that overlap with promoters
 
 # Set working directory
-WORKDIR="/ihome/biosc1542_2024s/glw30/mp2"
+WORKDIR=""
 cd $WORKDIR
 
 # Load required modules
 module load gcc/8.2.0 bedtools/2.30.0
 
 # Define input files
-GENCODE="/ix1/biosc1542_2024s/data/hg38.gencode.bed12"
-CHR_SIZES="/ix1/biosc1542_2024s/data/hg38_chr_sizes.txt"
-ATAC_PEAKS="/ix1/biosc1542_2024s/mp2/k562_atac_open_summits.bed"
+GENCODE="hg38.gencode.bed12"
+CHR_SIZES="hg38_chr_sizes.txt"
+ATAC_PEAKS="k562_atac_open_summits.bed"
 
 # Create 4kb promoter regions centered on transcription start sites
 echo "Creating promoter regions..."
