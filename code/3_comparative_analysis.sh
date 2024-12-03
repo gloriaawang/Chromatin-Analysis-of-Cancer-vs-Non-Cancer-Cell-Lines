@@ -5,15 +5,15 @@
 # and prepare visualization data
 
 # Set working directory
-WORKDIR="/ihome/biosc1542_2024s/glw30/mp2"
+WORKDIR=""
 cd $WORKDIR
 
 # Load required modules
 module load gcc/8.2.0 bedtools/2.30.0
 
 # Define input files
-CHR_SIZES="/ix1/biosc1542_2024s/data/hg38_chr_sizes.txt"
-GM12878_ENH="/ix1/biosc1542_2024s/mp2/gm12878_active_enh.bed"
+CHR_SIZES="hg38_chr_sizes.txt"
+GM12878_ENH="gm12878_active_enh.bed"
 
 # Create 101bp windows for fair comparison
 echo "Creating 101bp windows around K562 enhancers..."
