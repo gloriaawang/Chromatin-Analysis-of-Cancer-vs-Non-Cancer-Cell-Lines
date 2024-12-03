@@ -5,14 +5,14 @@
 # to identify enriched transcription factor binding sites
 
 # Set working directory
-WORKDIR="/ihome/biosc1542_2024s/glw30/mp2"
+WORKDIR=""
 cd $WORKDIR
 
 # Load required modules
 module load gcc/8.2.0 bedtools/2.30.0 homer/4.10.3
 
 # Define input files
-GENOME="/ix1/biosc1542_2024s/data/hg38.fa"
+GENOME="hg38.fa"
 
 # Get top 1000 K562-specific enhancers by significance
 echo "Selecting top K562-specific enhancers..."
