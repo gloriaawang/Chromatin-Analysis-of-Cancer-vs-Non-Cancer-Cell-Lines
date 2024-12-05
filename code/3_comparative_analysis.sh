@@ -7,22 +7,18 @@ module load gcc/8.2.0 bedtools/2.30.0
 CHR_SIZES="hg38_chr_sizes.txt"
 GM12878_ENH="gm12878_active_enh.bed"
 
-echo "Creating 101bp windows around K562 enhancers..."
 bedtools slop -i k562_active_enh.bed \
     -g ${CHR_SIZES} -b 50 \
     > k562_active_enh_101bp.bed
 
-echo "Identifying shared enhancers..."
 bedtools intersect -a k562_active_enh_101bp.bed \
     -b ${GM12878_ENH} -u \
     > shared_k562_gm12878_enhancers.bed
 
-echo "Identifying K562-specific enhancers..."
 bedtools intersect -a k562_active_enh_101bp.bed \
     -b ${GM12878_ENH} -v \
     > k562_specific_enhancers.bed
 
-echo "Identifying GM12878-specific enhancers..."
 bedtools intersect -a ${GM12878_ENH} \
     -b k562_active_enh_101bp.bed -v \
     > gm12878_specific_enhancers.bed
