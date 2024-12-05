@@ -8,18 +8,15 @@ CHR_SIZES="hg38_chr_sizes.txt"
 CHIP_BAM="k562_k27ac_chip.bam"
 INPUT_BAM="k562_input.bam"
 
-echo "Calling H3K27ac peaks..."
 macs2 callpeak -t ${CHIP_BAM} \
     -c ${INPUT_BAM} \
     --format BAM --name k562_k27ac \
     --gsize 2.9e9 --broad
 
-echo "Extending peak boundaries..."
 bedtools slop -i k562_k27ac_peaks.broadPeak \
     -g ${CHR_SIZES} -b 100 \
     > k562_k27ac_extended_peaks.bed
     
-echo "Identifying active enhancers..."
 bedtools intersect -a k562_enh.bed \
     -b k562_k27ac_extended_peaks.bed -u > k562_active_enh.bed
 
