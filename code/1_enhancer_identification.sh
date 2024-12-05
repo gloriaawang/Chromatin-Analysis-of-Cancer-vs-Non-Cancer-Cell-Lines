@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Purpose: Identify putative enhancers in K562 cells using ATAC-seq data by excluding regions that overlap with promoters
 
 WORKDIR=""
